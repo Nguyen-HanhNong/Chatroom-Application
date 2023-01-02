@@ -21,9 +21,18 @@ The user and messages were stored in a SQLite database, with the front-end of th
 
 ## Instructions to compile and run the application
 
+The following commands will be useful:
+
+### Command to run the server:
+`python manage.py runserver`
+
+### Command to reset the database:
+`python manage.py migrate chatroom zero`
+
 ## Potential Improvements and Advancements
 
-python manage.py runserver
+
+
 ./manage.py migrate
 
-python manage.py migrate chatroom zero 
+
