@@ -19,7 +19,11 @@ The website was primarily made using Python and more specifically, Django as my 
 
 The user and messages were stored in a SQLite database, with the front-end of the program being written in HTML and the jQuery framework. The jQuery framework was crucial in delivering the asynchronoux JavaScript to display messages in the chat rooms.
 
+## Video of the application running:
+![](https://user-images.githubusercontent.com/81977350/210283849-9c186111-71ef-41eb-80a4-b528b1ea4e83.gif)
+
 ## Instructions to compile and run the application
+1. 
 
 The following commands will be useful:
 
