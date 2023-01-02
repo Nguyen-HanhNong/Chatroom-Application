@@ -1,7 +1,9 @@
 body {
   margin: 0 auto;
-  max-width: 800px;
   padding: 0 20px;
+  min-height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 90%;
 }
 
 .container {
@@ -10,11 +12,15 @@ body {
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .darker {
   border-color: #ccc;
-  background-color: #ddd;
+  background-color: cyan;
 }
 
 .container::after {
@@ -37,14 +43,9 @@ body {
   margin-right:0;
 }
 
-.time-right {
-  float: right;
-  color: #aaa;
-}
-
 .time-left {
   float: left;
-  color: #999;
+  color: magenta;
 }
 
 input[type=text], select {

@@ -2,41 +2,19 @@
 <html>
 
 <head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href=" {% static '/css/room.css' %} ">
+  <link rel="icon" href="{% static '/icon/favicon.ico' %}">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{room}} - Chatroom Application</title>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>
-  
-  {% load static %}
-  <base href="{% static '/' %}">s
-  <link rel="stylesheet" type="text/css" href="room.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script> 
 </head>
 
 <body>
-  <h2>{{room}} - Chatroom Application</h2>
+  <h2>Chatroom Application</h2>
+  <h3>Room Name: {{room}}</h3>
   <div id="display"></div>
-
-  <script>
-    $(document).ready(function(){ // loading the document
-    setInterval(function(){ // function that occurs every 1 second
-      $.ajax({ // using AJAx to get the data from the URL, getMessages
-        type: 'GET',
-        url : "/getMessages/{{room}}/",
-        success: function(response){
-          console.log(response); //if it suceeds, show the response in the console
-          $("#display").empty(); 
-          for (var key in response.messages) //loop through every message
-          {
-            var temp="<div class='container darker'><b>"+response.messages[key].user+"</b><p>"+response.messages[key].value+"</p><span class='time-left'>"+response.messages[key].date+"</span></div>";
-            $("#display").append(temp); // adding the previous messages in the chat room and appending it to the div
-          }
-        },
-        error: function(response){ // if it fails, alert for an error
-            alert('An error occured')
-        }
-      });
-      },500); //make it repeat every second
-    })
-  </script>
 
   <div class="container">
     <form id="post-form">
@@ -67,6 +45,29 @@
       }
     });
     document.getElementById('message').value = '' // clearing the input field using JavaScript
+  });
+</script>
+
+<script>
+  $(document).ready(function(){ // loading the document
+  setInterval(function(){ 
+    $.ajax({ // using AJAx to get the data from the URL, getMessages
+      type: 'GET',
+      url : "/getMessages/{{room}}/",
+      success: function(response){
+        console.log(response); //if it suceeds, show the response in the console
+        $("#display").empty(); 
+        for (var key in response.messages) //loop through every message
+        {
+          var temp="<div class='container darker'><b>"+"User: " + response.messages[key].user+"</b><p>"+ "Message: " + response.messages[key].value+"</p><span class='time-left'>"+"Date: " + response.messages[key].date+"</span></div>";
+          $("#display").append(temp); // adding the previous messages in the chat room and appending it to the div
+        }
+      },
+      error: function(response){ // if it fails, alert for an error
+          alert('An error occured')
+      }
+    });
+    },500); //make it repeat every half second
   });
 </script>
 </html>
