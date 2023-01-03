@@ -8,7 +8,7 @@
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
 ## What is this application?
-This is a chatroom website which enables users to enter chatrooms with other users and send messages to each other in real-time.
+This is a chatroom website that enables users to enter chatrooms with other users and send messages to each other in real time.
 
 ## Choice of programming languages and frameworks
 
@@ -17,7 +17,7 @@ The website was primarily made using Python and more specifically, Django as my 
 - Even though Django is quite monolithic, Django follows a "batteries included" philosophy, which means it comes with a lot of functionality out of the box. 
 - Django has a robust set of features and tools for building web applications, including an ORM (Object-Relational Mapper) for interacting with databases, a template engine for building views, and a built-in user authentication system. These features helped me build a full-featured chat application more quickly and easily.
 
-The user and messages were stored in a SQLite database, with the front-end of the program being written in HTML and the jQuery framework. The jQuery framework was crucial in delivering the asynchronoux JavaScript to display messages in the chat rooms.
+The user and messages were stored in an SQLite database, with the front end of the program being written in HTML and the jQuery framework. The jQuery framework was crucial in delivering asynchronous JavaScript to display messages in the chat rooms.
 
 ## Video of the application running:
 ![](https://user-images.githubusercontent.com/81977350/210283849-9c186111-71ef-41eb-80a4-b528b1ea4e83.gif)
@@ -25,9 +25,9 @@ The user and messages were stored in a SQLite database, with the front-end of th
 ## Instructions to compile and run the application
 1. Make sure to have the following installed: [Python](https://www.python.org/downloads/) and [Django](https://www.djangoproject.com/download/)
 2. Next, download the source code or clone the repository.
-3. First, make sure that the database is setup and fresh with the following command: `python manage.py migrate chatroom zero`
+3. First, make sure that the database is set up and fresh with the following command: `python manage.py migrate chatroom zero`
 4. Next, to start the server, make sure you are in the root directory, and then in a terminal, run the following command: `python manage.py runserver`
-5. The server should startup and you can open the website by typing `http://127.0.0.1:8000/` in any modern browser.
+5. The server should start up and you can open the website by typing `http://127.0.0.1:8000/` in any modern browser.
 
 The following commands will be useful:
 
@@ -40,6 +40,4 @@ The following commands will be useful:
 ## Potential Improvements and Advancements
 - Enable proper account management: account sign-up and sign-out functionality
 - Allow all users to be able to see past open chat-rooms
-- Change the CSS to display all the messages on one side and display all the on-line users in the chatroom and their usernames on another side
-
-
+- Change the CSS to display all the messages on one side and display all the online users in the chatroom and their usernames on another side
